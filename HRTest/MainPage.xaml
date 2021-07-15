@@ -1,24 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HRTest.MainPage">
+             x:Class="HRTest.MainPage" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" BackgroundColor="#F5F5F5">
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn  "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        
+        
+        <material:MaterialCard CornerRadius="20" Elevation="2" HorizontalOptions="FillAndExpand" Margin="10" Padding="0">
+            <Grid RowDefinitions="60,*" HeightRequest="200">
+                <Grid BackgroundColor="#0080FF" Padding="20,10" RowDefinitions="*,*">
+                    <Label Grid.Row="0" Text="Project Name" TextColor="White" FontSize="12"/>
+                    <Label Grid.Row="0" Text="Job No" TextColor="White"  HorizontalTextAlignment="End" FontSize="12"/>
+                    
+                    <material:MaterialLabel Grid.Row="1" Text="Atlasian" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                    <material:MaterialLabel Grid.Row="1" Text="Project Name" TextColor="White" FontSize="14" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                </Grid>
+
+                <Grid Grid.Row="1" ColumnDefinitions="100,*" RowDefinitions="*,*,1,50" Padding="10,5">
+                    <Label Text="Client Name:" FontSize="15" FontAttributes="Bold" TextColor="Black"/>
+                    <Label Grid.Column="1" Text="23523-12" FontSize="15" TextColor="Black"/>
+
+                    <Label Grid.Row="1"  Text="Status:" FontSize="14" FontAttributes="Bold" TextColor="Black"/>
+                    <material:MaterialChip Grid.Row="1" Grid.Column="1"  BackgroundColor="Red" Text="IN PROGRESS" TextColor="White" FontSize="12"/>
+                    
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="Gray"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" Text="Last Updated" FontSize="15" VerticalOptions="Center"/>
+                    <Label Grid.Row="3" Grid.Column="1" Text="3/38/2021" VerticalOptions="Center"/>
+                    <material:MaterialButton Grid.Row="3" Grid.Column="1"  Text="*" BackgroundColor="#0080FF" HorizontalOptions="End"/>
+                </Grid>
+            </Grid>
+        </material:MaterialCard>
+
+        <Label Text="Test Text Entry Control with Helper Text enabled"/>
+        <material:MaterialTextField Text="" Placeholder="Test" HelperText="Required" PlaceholderColor="#0080FF" HelperTextColor="Gray" />
     </StackLayout>
 
 </ContentPage>
